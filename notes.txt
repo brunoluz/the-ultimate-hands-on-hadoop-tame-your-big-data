@@ -1,0 +1,2 @@
+ambari - GUI for hadoop managament based on its RESTful APIs
+hive - facilitates reading, writing and managing large datasets residing in distributed storage using SQL.
