@@ -1,2 +1,27 @@
-ambari - GUI for hadoop managament based on its RESTful APIs
-hive - facilitates reading, writing and managing large datasets residing in distributed storage using SQL.
+﻿Ambari - GUI for hadoop managament based on its RESTful APIs
+Hive - facilitates reading, writing and managing large datasets residing in distributed storage using SQL.
+
+hadoop is an open source software platfom for distributed storage and distributed processing of very large data seets on computer cluster built from commodity hardware.
+
+MapReduce is for distributed processing.
+Hadoop was the name of Doug Cutting kid's toy elephant.
+
+Horizontal scaling: add more computers onto your cluster. Horizontal scaling is linear.
+Vertical scaling: add more power through adding more resources to your computer (CPU, RAM)
+
+
+Why Hadoop?
+ - data is too damn big - terabytes per day.
+ - vertical scaling doesn't cut it.
+ - Hadoop isn't only for batch processing anymore.
+
+Hadoop technologies
+* HDFS: Hadoop Distributed File System. (Evolution of GFS – Google File System). Allow us to distribute the storage of big data across our cluster of computers. It make all the hard drivers on all our machines look like an giant file system.
+It also maintain copies of data between nodes, só if a computer dies, no data is lost.
+* YARN: Yet Another Resource Negotiator. It manages resources on your computing cluster.
+* MapReduce: Programming metaphor or programming model that allows you to process your data across an entire cluster. It consists of mappers and reducers. Mappers have the ability to transform your data in parallel across your entire computing cluster in a very efficient manner. Reducers are what aggregate that data together.
+* Pig: Pig is a very high level programming scripting language that sits on top of MapReduce. It allows you to write simple scripts that look like SQL or to chain together queries and get complex answers without writing any python or java code.
+* Hive: It has some similarity with Pig. It sits on top of MapReduce and look like a SQL Database. Hive is a way to write SQL queries and making this distributed.
+* Ambari: Gives you a view of your cluster and let you visualize what’s running on your cluster, which systems are using how much resources, views that allow you to do things like execute hive/pig queries or import databases.
+* Mesos: Is an alternative for yarn. 
+* Spark: One of the most exciting technologies in the Hadoop ecosystem
