@@ -15,7 +15,7 @@ Why Hadoop?
  - vertical scaling doesn't cut it.
  - Hadoop isn't only for batch processing anymore.
 
-Hadoop technologies
+*** Hadoop stack ***
 * HDFS: Hadoop Distributed File System. (Evolution of GFS – Google File System). Allow us to distribute the storage of big data across our cluster of computers. It make all the hard drivers on all our machines look like an giant file system.
 It also maintain copies of data between nodes, só if a computer dies, no data is lost.
 * YARN: Yet Another Resource Negotiator. It manages resources on your computing cluster.
@@ -24,4 +24,27 @@ It also maintain copies of data between nodes, só if a computer dies, no data i
 * Hive: It has some similarity with Pig. It sits on top of MapReduce and look like a SQL Database. Hive is a way to write SQL queries and making this distributed.
 * Ambari: Gives you a view of your cluster and let you visualize what’s running on your cluster, which systems are using how much resources, views that allow you to do things like execute hive/pig queries or import databases.
 * Mesos: Is an alternative for yarn. 
-* Spark: One of the most exciting technologies in the Hadoop ecosystem
+* Spark: One of the most exciting technologies in the Hadoop ecosystem. It is sitting on the same level of MapReduce. And it sits on top of Yarn or Mesos. It can run queries on your data and like MapReduce it requires some programming, and you need to write your Spark queries using Python, Java or Scala (Scala is preferred). Spark is extremely fast and it is under a lot of development. If you need to quickly, efficiently and reliably process data on your cluster, Spark is a really good choice. It is versatile. It can handle SQL queries. It can do machine learning across an entire cluster of information. It can handle streaming data in real time and other cool stuff.
+* Tez: It is similar to Spark and use similar techniques as Spark such as “acyclic graph” and it gives Tez a leg up on what MapReduce does because it can produce more optimal plans for actually execute queries. Tez is commonly used with hive.
+* HBase: It a way of exposing data on your cluster to a transactional platforms. HBase is what we call NoSQL database and it is a columnar data store. It is a fast database meant for very large transaction rates.
+* Apache Storm: It is used for processing streaming data in real time (Spark streaming solves the same problem). So, with apache storm processing does not need to be batch. It can update your machine learning models or transform data into a database in real time.
+* Oozie: It is a scheduler. You can schedule jobs onto your cluster.
+* Zookeeper: It is a technology for coordinating everything on your cluster. It is used for keeping track of which nodes are up and which nodes down. It can keep track of shared states across your cluster that different applications can use. Many applications rely on Zookeeper to keep data consistent and reliable even when a cluster goes down. It can keep track of what cluster is the master node, for example.
+
+*** Data ingestion ***
+* Sqoop: It is a way of tying your Hadoop database into a relational database (anything that can talk to ODBC or JDBC can be transformed by sqoop to HDFS). Sqoop is basically a connector between Hadoop and your legacy databases.
+* Flume: It a way of transporting web logs at a very large scale and very reliably onto your cluster. If you have a fleet of web servers Flume can listen to the web logs coming in from those web servers in real time and publish then into your cluster in real time for processing by storm or spark streaming.
+* Apache Kafka: Similar to Flume, but it for more general purpose. It can basically collect data from any sort from a cluster of PCs, from a cluster of web servers or whatever it is and broadcast that data into your Hadoop cluster as well.
+
+*** External data storage ***
+* HBase could fit here
+* MySQL (or any SQL Database): You can import or export data from Hadoop.
+* Cassandra / MongoDB: Columnar data stores that are good choices for exposing your data for real time usage.
+
+*** Query Engines ***
+* Hive could fit here.
+* Apache Drill: Allows you to write SQL Queries that will work across a wide range of NoSQL databases. It can talk to your MongoDB, Cassandra and maybe HBase and tie those results all together.
+* Hue: A way of interactively creating queries that works well with Hive and HBase. For Cloudera it takes the role of Ambari as the thing that sits on top of everything and lets you visualize and execute queries on the Hadoop cluster as well. 
+* Apache Phoenix: Similar to Drill it allows you to write SQL queries across the entire range of data stores technologies you might have. It goes one step further and it gives you ACID (Atomicity, Consistency, Isolation and Durability) and OLTP (Online Transaction Processing).
+* Presto: Another way to execute queries across your entire cluster.
+* Apache Zeppelin: Notebook approach to the User Interface and how you interact with your Hadoop cluster.
