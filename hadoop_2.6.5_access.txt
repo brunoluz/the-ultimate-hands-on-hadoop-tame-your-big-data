@@ -1,4 +1,7 @@
-ambari: http://localhost:1080
+GUI:    http://localhost:1080
+
+ambari: http://localhost:8080/
  - user: maria_dev
  - pass: maria_dev
+
 ssh:    http://localhost:4020
