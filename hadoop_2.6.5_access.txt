@@ -5,3 +5,6 @@ ambari: http://localhost:8080/
  - pass: maria_dev
 
 ssh:    http://localhost:4020
+
+
+ssh maria_dev@localhost -p 2222
