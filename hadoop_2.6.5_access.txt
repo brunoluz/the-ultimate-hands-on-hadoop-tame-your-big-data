@@ -8,3 +8,6 @@ ssh:    http://localhost:4020
 
 
 ssh maria_dev@localhost -p 2222
+ - user: root
+ - default pass:  hadoop
+ - modified pass: BrLuz0
