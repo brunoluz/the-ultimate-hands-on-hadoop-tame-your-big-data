@@ -11,3 +11,11 @@ ssh maria_dev@localhost -p 2222
  - user: root
  - default pass:  hadoop
  - modified pass: BrLuz0
+
+
+# reset ambari admin password
+ambari-admin-password-reset
+
+ambari admin
+ - user: admin
+ - pass: xpto

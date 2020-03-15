@@ -69,6 +69,15 @@ _____
 - MapReduce is one of the core pieces of hadoop.
 - Distributes the processing of your data on your cluster.
 - Divides you data up into partitions that are Mapped (transformed) and Reduced (Aggregated) by mapper and reducer funcions you define.
-- Resilient to failure - an application master monitor your mappers and reducers on each partition.
-- Map -> Transform data
+- Resilient to failure - an application master monitor your mappers and reducers on each partition. 
 - Reduce -> Aggregate data
+
+*** Pig
+- Pig is a scripting language called Pig Latin built on top of Hadoop and MapReduce that lets you create MapReduce jobs without having to write Maps and Reducers.
+- Pig Latin lets you use SQL-like syntax to define your map and reduce steps.
+- Highly extensible with user-defined functions (UDF's).
+- Pig sits on top of MapReduce or Tez. MapReduce or Tez sits on top of Yarn and Yarn sits on top of HDFS.
+- You can run Pig by using
+  - Grunt (command line interpreter)
+  - Script file
+  - Ambari / Hue
