@@ -24,3 +24,4 @@ class RatingsTotalCount(MRJob):
 
 if __name__ == '__main__':
     RatingsTotalCount.run()
+

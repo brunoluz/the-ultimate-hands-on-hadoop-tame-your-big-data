@@ -1,7 +1,6 @@
-ssh maria_dev@localhost -p 2222
-# password
-
 yum install python-pip -y
+
+hdfs dfs -copyFromLocal u.data /user/maria_dev/u.data
 
 # run script locally, without hadoop
 python RatingsBreakdown.py u.data
