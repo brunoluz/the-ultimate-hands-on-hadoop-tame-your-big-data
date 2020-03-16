@@ -81,3 +81,41 @@ _____
   - Grunt (command line interpreter)
   - Script file
   - Ambari / Hue
+- Pig Latin Commands:
+  - LOAD: Loads a dataset from a file in HDFS.
+  - STORE: Saves a dataset to a HDFS file.
+  - DUMP: Prints a dataset to output.
+  - FILTER: Filter a dataset based on a boolean expression.
+  - DISTINCT: Gives you back the unique values within a relation.
+  - FOREACH/GENERATE: Creates a new relation from an existing one through one line at a time and transforming it someway.
+  - MAPREDUCE: Lets you call explicit mappers and reducers on a relation.
+  - STREAM: Used for extensibility. You can stream results of Pig out to a process and just use StdIn and StdOut.
+  - SAMPLE: Can be used to create a random sample from your relation.
+  - JOIN: Join different datasets into one.
+  - COGROUP: Creates a separate tuple for each key and creates a nested structure.
+  - GROUP: A way of grouping together all the different values associated with the given key that you specified (It is doing a reduce). 
+  - CROSS: Lets you do all the combinations between two relations (Cartesian product).
+  - CUBE: Similar to CROSS, but bigger.
+  - ORDER: Sort your dataset.
+  - RANK: Similar to sort, but does not change the order. It actually gives a Rank for each row.
+  - LIMIT: Handy if you as just experimenting or debbugging. You can limit whatever dataset or relationship.
+  - UNION: Takes two relations and squishes them together.
+  - SPLIT: Takes a relation and splits it up into more than one relation.
+- Pig latin Diagnostics:
+  - DESCRIBE: Describe what pigs think is inside of a given relation - names and types.
+  - EXPLAIN: A simple explain plan so it can actually give a little insight into how pig intends to execute a given query.
+  - ILLUSTRATE: Goes a little further than explain. It takes a sample from each relation and shows you exactly what it is doint with each piece of data.
+- Pig Latin UDF - User Defined Function:
+  - REGISTER: Register a .jar file that contains a UDF.
+  - DEFINE: Assign names to those functions imported by a .jar file.
+  - IMPORT: Used for importing macros for pig file so you can actually have reusable bits of Pig code.
+- Pig Latin other functions and loaders.
+  - AVG: Average of a bunch of stuff in a bag.
+  - CONCAT, COUNT, MAX, MIN, SIZE, SUM: Self explanatory.
+  - PigStorage: User for dellimited data.
+  - TextLoader: Just loads up one line of input data or output data per row.
+  - JsonLoader: Used for load JSON files.
+  - AvroStorage: Saves a dataset into .AVRO file.
+  - ParquetLoader: Used for load PARQUET files.
+  - OrcStorage: Saves a dataset into .ORC file.
+  - HBaseStorage: Integrates Pig with HBase.
