@@ -1,10 +1,14 @@
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 from pyspark.sql import functions
+import sys
+
+u_item_file = ""
+u_data_file = ""
 
 def loadMovieNames():
     movieNames = {}
-    with open("ml-100k/u.item") as f:
+    with open(u_item_file) as f:
         for line in f:
             fields = line.split('|')
             movieNames[int(fields[0])] = fields[1]
@@ -15,6 +19,10 @@ def parseInput(line):
     return Row(movieID = int(fields[1]), rating = float(fields[2]))
 
 if __name__ == "__main__":
+
+    u_item_file = sys.argv[1]
+    u_data_file = sys.argv[2]
+
     # Create a SparkSession (the config bit is only for Windows!)
     spark = SparkSession.builder.appName("PopularMovies").getOrCreate()
 
@@ -22,7 +30,7 @@ if __name__ == "__main__":
     movieNames = loadMovieNames()
 
     # Get the raw data
-    lines = spark.sparkContext.textFile("hdfs:///user/maria_dev/ml-100k/u.data")
+    lines = spark.sparkContext.textFile(u_data_file)
 
     # Convert it to a RDD of Row objects with (movieID, rating)
     movies = lines.map(parseInput)
@@ -36,8 +44,11 @@ if __name__ == "__main__":
     # Compute count of ratings for each movieID
     counts = movieDataset.groupBy("movieID").count()
 
+    # Filter only more than 10 ratings
+    filteredCounts = counts.filter("count > 10")
+
     # Join the two together (We now have movieID, avg(rating), and count columns)
-    averagesAndCounts = counts.join(averageRatings, "movieID")
+    averagesAndCounts = filteredCounts.join(averageRatings, "movieID")
 
     # Pull the top 10 results
     topTen = averagesAndCounts.orderBy("avg(rating)").take(10)
