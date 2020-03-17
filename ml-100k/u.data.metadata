@@ -1,0 +1,4 @@
+column 01: user id
+column 02: movie id
+column 03: rating
+column 04: timestamp (unix timestamp - epoch seconds since 01-01-1970)

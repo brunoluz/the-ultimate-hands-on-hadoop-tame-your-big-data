@@ -1,0 +1,33 @@
+***HIVE
+- HIVE translates SQL Queries to MapReduce or TEZ jobs on your cluster.
+- Uses familiar SQL syntax (HiveQL)
+- OLAP queries: Online Analytical Processing.
+- Not recommended for real-time transactions or distributed systems.
+- Recommended for queries across large datasets.
+- Extensible: you can plug your UDF's (user defined functions), you can plug your own explict mappers, etc.
+- Exposes JDBC and ODBC driver to look just like any other database.
+- Why not use Hive
+  - High latency. Not appropriate for OLTP (Online Transaction Processing).
+  - Stores data de-normalized.
+  - HiveQL is limited in what  it can do (better approaches would be pig or spark).
+  - No transactions.
+  - No record-level updates, inserts and deletes.
+- HiveQL
+  - Pretty much MySQL with some extensions.
+  - Allows you to specify how structured data is stored and partitioned.
+- Hive maintains a metastore that imparts a structure you define on the unstructured data that is stored on HDFS.
+
+LOAD DATA: Moves data from a distributed filesystem into Hive
+LOAD DATA LOCAL: Copies data from your local filesystem into Hive.
+CREATE EXTERNAL TABLE: Hive does not take ownershipt.
+
+- You can store your data in partitioned subdirectories. It gives you a HUGE optimization if your queries are only on certain partitions.
+
+- Ways to use Hive
+  - Interactive via hive> prompt / Command line interface (CLI)
+  - Saved query files
+    - hive -f /somepath/queries.hql
+  - Ambari / Hue
+  - JDBC/ODBC server
+  - Thrift service (but remenber, hive is not for OLTP)
+  - Oozie
