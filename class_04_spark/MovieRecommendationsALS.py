@@ -26,7 +26,7 @@ if __name__ == "__main__":
     movieNames = loadMovieNames()
 
     # Get the raw data
-    lines = spark.read.text("hdfs:///user/maria_dev/ml-100k/u.data").rdd
+    lines = spark.read.text("hdfs:///user/maria_dev/ml-100k/u_userid_0.data").rdd
 
     # Convert it to a RDD of Row objects with (userID, movieID, rating)
     ratingsRDD = lines.map(parseInput)
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     print("\nRatings for user ID 0:")
     userRatings = ratings.filter("userID = 0")
     for rating in userRatings.collect():
-        print movieNames[rating['movieID']], rating['rating']
+        print (movieNames[rating['movieID']], rating['rating'])
 
     print("\nTop 20 recommendations:")
     # Find movies rated more than 100 times
