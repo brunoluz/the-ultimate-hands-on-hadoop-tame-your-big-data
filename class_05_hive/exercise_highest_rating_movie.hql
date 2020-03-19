@@ -1,0 +1,2 @@
+-- find the movie with the highest average rating
+-- only consider movies with more than 10 ratings
