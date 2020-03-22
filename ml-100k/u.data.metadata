@@ -1,3 +1,5 @@
+- ratings file
+- separated by tabs
 column 01: user id
 column 02: movie id
 column 03: rating

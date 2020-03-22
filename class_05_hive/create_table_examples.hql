@@ -3,7 +3,7 @@ CREATE TABLE ratings2 (
     userID INT,
     movieID INT,
     rating INT,
-    time INT)
+    time INT
 )
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '\t'
@@ -14,7 +14,7 @@ OVERWRITE INTO TABLE ratings2;
 
 
 -- not managed by hive
-CREATE EXTERNAL TABLE IF NOT EXISTS rantings3 (
+CREATE EXTERNAL TABLE IF NOT EXISTS ratings3 (
     userID INT,
     movieID INT,
     rating INT,

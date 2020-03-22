@@ -1,0 +1,15 @@
+*** MYSQL
+- Popular, free relational database
+- Generaly monolithic in nature
+- Can be used for OLTP (Online Transaction Processing)
+- Existing data may exist in MySQL that you want to import to Hadoop.
+
+*** Sqoop
+- Sqoop is the union of SQL and Hadoop.
+- It is made to handle large datasets.
+- Used to import or export data from or into your hadoop cluster.
+- Sqoop works on this way
+  - create lots of mappers
+  - populate hdfs
+- It is not the most efficient way handling import and export on small datasets. 
+- It is meant to be used on large datasets.
