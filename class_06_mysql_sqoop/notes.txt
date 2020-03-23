@@ -13,3 +13,10 @@
   - populate hdfs
 - It is not the most efficient way handling import and export on small datasets. 
 - It is meant to be used on large datasets.
+- Sqoop is a command line tool. 
+  - Import data to flat file example: sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies [-m (how many mappers do you want to use)]
+  - import data directly into hive example: sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --hive-import
+  - Incremental imports
+    - --check-column and --last-value
+  - Export data into mysql example: sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies --export-dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
+  - Target table must already exist into MySQL, with columns in expected order.
