@@ -1,0 +1,10 @@
+# hive file is stored at /apps/hive/warehouse/movies/
+# to import data into mysql, the table need to exist.
+mysql -uroot -phadoop
+
+use movielens;
+CREATE TABLE exported_movies (id INTEGER, title VARCHAR(255), releaseDate DATE);
+GRANT ALL PRIVILEGES ON movielens.* to 'sqimport'@'localhost';
+exit;
+
+sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies --export-dir /apps/hive/warehouse/movies/ --input-fields-terminated-by '\0001' --username sqimport --password hadoop
