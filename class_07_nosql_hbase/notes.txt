@@ -1,0 +1,29 @@
+Why NoSQL?
+- Non Relational Databases.
+- Not only SQL.
+- Those systems are built to scale horizontaly.
+- Scale RDBMS to massive loads leads to exterme measures:
+  - Denormalization
+  - Caching Layers
+  - Master/Slave set ups
+  - Sharding
+  - Materialized views
+  - Remove stored procedures
+
+NoSQL
+- At a high level, these are key-values data stores.
+
+HBase
+- Built on top of HDFS
+- Allows you to have a very fast, very scalable transactional system to query your data stored on a HDFS.
+- Indicated if you need to exposed your data that is sitting on top of your Hadoop cluster.
+- There is no SQL Language. Only CRUD operations. It does CRUD operatations really quickly and at a large scale.
+- How to access HBase
+  - HBase shell
+  - Java API
+    - Wrappers for python, scala, etc
+  - Spark, Hive, Pig
+  - REST service
+  - Thrift service
+  - Avro service
+- HBase is row oriented
