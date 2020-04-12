@@ -1,0 +1,4 @@
+1. Open settings from your Virtual Machine
+2. Go to Network > Advanced > Port Fowarging > Add new > "HBase REST", 127.0.0.1, 8000
+
+*** HDP 2.6.5 the 8000 port is already opened by default.

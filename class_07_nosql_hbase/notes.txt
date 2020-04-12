@@ -27,3 +27,5 @@ HBase
   - Thrift service
   - Avro service
 - HBase is row oriented
+- Starbase is a python client for HBase.
+- HBase maintains versioning on cells
