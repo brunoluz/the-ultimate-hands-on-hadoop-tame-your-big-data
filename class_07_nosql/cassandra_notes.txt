@@ -1,0 +1,17 @@
+*** Cassandra
+- There is no master node in cassandra (no single point of failure)
+- Tunned and optimized for transactional queries at a large scale.
+- Engineered for high availability, massive transaction rates, high scalability.
+- Cassandra query language is CQL (Cassandra Query Language)
+- Why Cassandra?
+  - The CAP theorem says we can only choose 2 of 3 in a distributed storage: consistency, availability and partition-tolerance.
+    - Partition-tolerance is a requirement within ˜big data˜, so is necessary to choose between consistency and availability.
+  - Cassandra favors availability over consistency.
+    - It is "eventualy consistent"
+    - Cassandra can have a delay to commit your data to the entire cluster.
+
+
++ Availability + Consistency - Partition-Tolerance: MySQL
+- Availability + Consistency + Partition-Tolerance: HBase, MongoDB
++ Availability - Consistency + Partition-Tolerance: Cassandra
+
