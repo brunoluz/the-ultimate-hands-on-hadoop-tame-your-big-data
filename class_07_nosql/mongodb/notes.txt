@@ -1,0 +1,17 @@
+- MongoDB comes from Humongous Data
+- Consistency and Partition-Tolerance. It does have a SPOF (Single Point of Failure - A master node)
+- Document data model: It can store any json blog of data you can shove into a document int MongoDB.
+- It doesn't have to be structures. You don't need to have the same schema across each document.
+- In MongoDB we talk about Databases, Collections and Documents instead of Databases, tables and rows.
+- It's not just a NoSQL database - very flexible document model.
+- Shell is a full JavaScript interpreter.
+- Supports many indices
+  - But only one can be used for sharding
+  - More than 2 - 3 are still discouraged
+  - Full-text indices for text searches
+  - Spatial indices.
+- Built-in aggregation capabilitgies, MapReduce, GridFS
+  - For some applications you might not need Hadoop at all
+  - But MongoDB still integrates with Hadoop, Spark, and most languages
+- A SQL connector is available
+  - But MongoDB is not designed for joins and normalized data.
