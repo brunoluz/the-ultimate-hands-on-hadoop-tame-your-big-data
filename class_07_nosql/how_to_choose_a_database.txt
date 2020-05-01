@@ -1,0 +1,14 @@
+CHOOSING YOUR DATABASE
+
+There's no real formula.
+But there are some considerations.
+
+What systems do you need to integrate togheter? Different technologies have different connectors for different other technologies.
+
+Example: if you have a big analytics job that is currently running in Apache Spark, then you probably choone one that connects best with spark.
+
+
+Scaling: How is going your data scale up? If it is going to be big, you should loot at something like cassandra, mongoDB or HBase, where you can distribute you data across an entire cluster and scale horizontaly.
+Transaction rates: How many requests do you intend to get per second? more than thousands, a single database is not going to cut it. Is this cases, you are looking at distributed, NoSQL databases.
+Support: Do you have in-house expertise? Those NoSQL databases we talked about in this course are vunerable by their default settings. This technologies offers professional paid support?
+CAP Theorem: Consistency, Availability and Partition-Tolerance - Choose two of three.

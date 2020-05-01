@@ -16,4 +16,14 @@ export LC_ALL=C
 mongo
 use movielens
 db.users.find( {user_id: 100} )
-db.users.explain.find( {user_id: 100} )
+db.users.explain().find( {user_id: 100} )
+
+# create an index to have a better scan on select.
+db.users.createIndex( {user_id: 1} )
+
+# group users by occupation and find average age
+db.users.aggregate( [ { $group: { _id: { occupation: "$occupation" }, avgAge: { $avg: "$age" } } } ] )
+db.users.count()
+db.getCollectionInfos()
+db.users.drop()
+exit
