@@ -1,0 +1,31 @@
+External query engines
+- Hue
+- Apache Phoenix
+  - Sits on top of HBase
+  - Allows you to SQL queries on things that are not really a relational database.
+- Apache Zeppeli
+- Apache Drill
+  - Lets you issue SQL queries across a wide range of stuff that might be in your cluster
+    - MongoDB
+    - HDFS
+    - S3
+    - Google Cloud Storage
+    - Microsoft Azure
+    - Hive
+    - HBase
+- Presto
+  - It is like Apache Drill
+  - Lets you SQL queries across a variety of a different store technologies, but instead of being an Apache project, it is actually made by facebook and now it is open source.
+  - Can talk to cassandra (Apache Drill cannot)
+  - Can not talk to MongoDB (Apache Drill can)
+
+
+  APACHE DRILL
+  - A system that sits on top of your various technologies for storing data, and it basically lets you execute SQL queries on data that may not have a schema at all.
+  - SQL engine that allows you to run relational looking SQL queries across a wide variety of non-relational databases and data files. 
+  - It can sit on top of Hive, MongoDB and HBase, as well any flat JSON formatter, Parquet files that you may have on your HDFS cluster.
+  - It is SQL (not SQL-Like)
+  - Has a ODBC / JDBC driver so other tools can connect to it just like any relational database.
+  - Although it works with SQL, it still non-relational under the hood.
+  - Queries with lots of joins are not going to be efficient.
+  

@@ -1,0 +1,9 @@
+  APACHE DRILL
+  - A system that sits on top of your various technologies for storing data, and it basically lets you execute SQL queries on data that may not have a schema at all.
+  - SQL engine that allows you to run relational looking SQL queries across a wide variety of non-relational databases and data files. 
+  - It can sit on top of Hive, MongoDB and HBase, as well any flat JSON formatter, Parquet files that you may have on your HDFS cluster.
+  - It is SQL (not SQL-Like)
+  - Has a ODBC / JDBC driver so other tools can connect to it just like any relational database.
+  - Although it works with SQL, it still non-relational under the hood.
+  - Queries with lots of joins are not going to be efficient.
+  

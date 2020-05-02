@@ -1,0 +1,18 @@
+- A SQL Driver for HBase that supports transactions
+- Fast, low-latency - OLTP support
+- Made by Salesforce, then open-sourced.
+- Exposes a JDBC connector for HBase.
+- Supports secondary indices and user-defined functions
+- Integrates with MapReduce, Spark, Pig and Flume.
+
+Why Phoenix?
+- It is really fast.
+- Apps and analysts may find SQL easier to work with.
+- Phoenix can optimize more complex queries for you (but remember - HBase is fundamentally non-relational)
+
+How to use?
+- Command Line Interface (CLI)
+- Phoenix API for Java
+- JDBC Driver (thick client)
+- Phoenix Query Server (PQS) (thin client) - Enable Non-Java applications to work with Phoenix.
+- JAR's for MapReduce, Hive, Pig, Flume, Spark
