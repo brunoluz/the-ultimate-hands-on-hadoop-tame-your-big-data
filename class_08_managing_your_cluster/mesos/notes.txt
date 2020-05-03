@@ -1,0 +1,23 @@
+MESOS
+- Came out of Twitter
+- It is a system that manages resources across your data center(s)
+- Not only for big data. It can allocate resources for web servers, small scripts, etc.
+- His purpose is to solve a larger problem:  It is really a general container management system.
+- Mesos is not really part of Hadoop ecosystem. but it can play nice with it.
+  - Spark and Storm may both run on Mesos instead of YARN
+  - YARN may be integrated with Mesos using Myriad
+
+Mesos x YARN
+- YARN is a monolihic scheduler - You give it a job and YARN will figure it out where to run.
+- Mesos is a two-tiered system
+  - Mesos just makes offers of resources to your application
+  - Your framework decides whether to accept or reject them
+  - You also decide your own scheduling algorithm
+- YARN is optimized for long, analytical jobs
+- Mesos is built to handle that, as well as long-lived processes and short lived processes as well.
+
+Where Mesos fits in
+- If you are looking for an architecture you can code all of your organization cluster applications against - not just Hadoop stuff - Mesos can be really useful. (Kubernetes/docker may be useful too)
+- If you are about Spark and Storm from Hadoop world, Mesos is an option.
+  - But YARN is probably better, especially if your data is on HDFS
+  - Spark on Mesos is limited to one executor per slave (node)

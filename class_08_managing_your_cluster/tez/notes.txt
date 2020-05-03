@@ -1,0 +1,7 @@
+Tez
+- Manages Directed Acyclic Graphs
+- Bit of infrastructure
+- Make your Hive, Pig or MapReduce jobs faster
+- It is an application framework that clients can code against as a replacement for MapReduce.
+- Relies on a holistic view of your job: eliminates unnecessary steps and dependencies.
+- Optimizes physical data flow and resource usage.

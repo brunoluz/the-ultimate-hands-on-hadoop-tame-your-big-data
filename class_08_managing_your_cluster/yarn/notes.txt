@@ -1,0 +1,8 @@
+Apache Yarn
+- Yeat Another Resource Negotiator
+- Separates the problem of managing resources on your cluster from MapReduce
+- Enabled development of MapReduce alternatives (Spark, Tez) built on top of Yarn
+- You can write code to it, but there is no really necessity for it.
+
+- YARN manages the compute (processing) layer, while HDFS manages the storage layer.
+- MapReduce, Spark and Tez are YARN applications.
