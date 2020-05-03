@@ -1,0 +1,22 @@
+- It is a lot like Drill
+  - It can connect to many different "big data" databases and data stores at once, and query across them.
+  - Familiar SQL syntax
+  - Optimized for OLAP - Analytical queries, data warehousing
+- Developed and still partially maintained for Facebook.
+- Exposes JDBC, command-line and Tableau interfaces.
+
+- It has a cassandra connector.
+- Used by Facebook, Dropbox and AirBNB.
+
+- Connects to
+  - Cassandra (It is from facebook either, after all)
+  - Hive
+  - MongoDB
+  - MySQL
+  - Local files
+  - Kafka
+  - JMX
+  - Postgres
+  - Redis
+  - Accumulo
+  
