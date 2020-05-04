@@ -1,0 +1,23 @@
+ZOOKEEPER
+- Keeps track of information that must be synchronized across your cluster
+  - Which node is the master?
+  - What tasks are assigned to which workers?
+  - Which workers are currently available?
+- It is a tool that applications can use to recover from partial failures in your cluster.
+- An integral part of HBase, High-Availability (HA), MapReduce, Drill, Storm, Solr and others.
+
+Failure Modes
+- Master crashes: Needs to fail over a backup.
+- Worker crashes: Work needs to be redistributed.
+- Network trouble: Part of your cluster can't see the rest of it.
+
+Primitive Operations in a distributed system:
+- Master election
+  - One node register itself as a master, and hold a "lock" on that data.
+  - Other nodes cannot become master until that lock is released.
+  - Only one node is allowed to hold the lock at a time.
+- Crash detection
+  - "Ephemeral" data on a node's availability automaticaly goes away if the node disconnects, or fails to refresh itself after some timeout period.
+- Group management
+- Metadata
+  - List of outstanding tasks, task assignments.
