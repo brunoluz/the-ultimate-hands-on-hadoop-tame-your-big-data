@@ -1,0 +1,35 @@
+Oozie - Orchestrating your Hadoop jobs
+- Burmese (Birmanês) for "Elephant Keeper"
+- A system for running and scheduling Hadoop tasks.
+
+- Workflows
+  - A multi-stage Hadoop job
+    - Might chain togheter MapReduce, Hive, Pig, Sqoop and distcp tasks
+    - Other systems available vi add ons (like spark)
+  - A workflow is a DAG (Directed Acyclic Graph) of actions
+    - Specified via XML
+    - You can't run actions that don't depend on each other in parallel.
+
+- How to set up a Workflow in Oozie
+  - Make sure each actions works on its own
+  - Make a directory on HDFS for your job
+  - Create your workflow.xml file and put it on your HDFS folder
+  - Create job.properties defining any variables your workflow.xml needs
+    - This goes on your local filesystem where you will launch the job from
+    - You could also set these properties within your XML.
+
+- Running a workflow with Oozie
+  - oozie job --oozie http://localhost:11000/oozie -config /home/maria_dev/job.properties -run
+  - Monitor process at http://127.0.0.1:11000/oozie
+
+- In addition to workflows, Oozie has a concept of coordinators
+  - Schedules workflow execution
+  - Launches workflows based on a given start time and frequency
+  - Will also wait for required input data to become available.
+  - Run in exactly the same way as a workflow.
+
+- Oozie bundles
+  - New in Oozie 3.0
+  - A bundle is a collection of coordinators that can be managed togheter
+  - Example: You may have a bunch of coordinators for processing log data in various ways.
+    - By grouping then in a bundle, you could suspend them all if there were some problem with log collection.
