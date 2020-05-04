@@ -1,0 +1,15 @@
+ZEPPELIN 
+- Is primary a quick way to experiment with Apache Spark and visualize your big data and slice it in a different ways.
+- It has plug-ins for others on your Hadoop cluster environment like HBase, Cassandra, Pig and others.
+- It is a data scientist tool, where you can experiment in an interactive manner.
+- It is a notebook interface for your big data. (Similar to python notebooks)
+  - Lets you interactively run scripts/code against your data
+  - Can interleave with nicely formated notes
+  - Can share notebooks with others on your cluster
+- Can run spark code interactively (like you can in the Spark shell)
+  - This speeds up development cycle
+  - Allows easy experimentation and exploration of your big data
+- Can execute SQL queries directly against SparkSQL
+- Query results may be visualized in charts or graphs.
+- Makes Spark feel more like a data science tool.
+ 

@@ -21,3 +21,18 @@ Primitive Operations in a distributed system:
 - Group management
 - Metadata
   - List of outstanding tasks, task assignments.
+
+- But ZooKeeper is not about primitive operations. It is about a more general purpose that makes it easy for applications to implement them.
+- It provides a very consistent little distributed file system. 
+  - Strong consistency guarantees
+  - Replace the concept of "file" with "znode" and you have pretty much got it.
+- ZooKeepers API:
+  - Create, Delete, Exists, setData, getData, getChildren
+- A client can register for notifications on a znode
+  - Avoid continuous polling.
+  - Example: register for notification on /master - if it goes away, try to take over as a new master
+
+- Persistent and Ephemeral znodes
+  - Persistent znodes remain stored until explicitly deleted.
+  - Ephemeral znodes go away if the client that created it crashes or loses its connection to ZooKeeper
+  
