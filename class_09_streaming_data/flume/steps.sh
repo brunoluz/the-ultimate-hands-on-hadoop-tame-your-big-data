@@ -1,0 +1,1 @@
+wget media.sundog-soft.com/hadoop/example.conf

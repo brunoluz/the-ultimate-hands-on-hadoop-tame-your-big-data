@@ -1,0 +1,30 @@
+Flume
+- Another way to stream data into your cluster
+- Made from the start with hadoop in mind.
+  - Built-in sinks for HDFS and HBase.
+- Originally made to handle log aggregation.
+- HDFS and Hadoop don't really like having a million things connect to it at once, so you need a buffer. Flume acts like this buffer.
+- When we talk about Flume, we talk about Flume Agents.
+- A Flume Agent is composed with this three components:
+  - Source
+    - Where data is comming from
+    - Can optionally have Channel Selectors and Interceptors
+  - Channel
+    - How the data is transferred (via memory or files)
+  - Sink
+    - Where the data is going
+    - Can be organized into Sink Groups
+    - A Sink can only connect to one channel.
+      - Channel is notified to delete a message once the sink processes it.
+- Built-in source types
+  - Spooling directory
+  - Avro
+  - Kafka
+  - Exec
+  - Thrift
+  - Netcat
+  - HTTP
+  - Custom
+  - And more!
+
+
