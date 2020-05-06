@@ -1,0 +1,14 @@
+STREAMING
+- Streaming is the process of publishing data from some source, like web logs, sensor data or something like that and actually getting that in a scalable manner published into your cluster where you can actually do some processing on it.
+- How new data get into your cluster? Especially if it is a "big data"?
+  - New log entries from your web servers
+  - New sensor data from your IoT system
+  - New stock trades
+- Streaming lets you publish this data, in real time, to your cluster
+  - And you can even process it in real time as it comes in.
+- Two problems
+  - How to get data from many different sources flowing into your cluster
+  - Processing when it is there
+
+KAFKA
+- Is a publish/subscribe messaging system.
