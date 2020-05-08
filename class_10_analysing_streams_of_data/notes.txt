@@ -1,0 +1,33 @@
+SPARK STREAMING
+- It is a way of processing data in real time as it comes in
+- Big data neves stops flowing
+- Analyze data streams in real time, instead of huge batch jobs daily.
+- Analyze streams of web log data to react to user behavior
+- Analyze streams of real-time sensor data for "Internet of Things" stuff
+- Your cluster receives data
+  - Spark Streaming discretizes this data in chuncks of data
+  - You can set an batch increment time for one second, two seconds, whatever will be best for your case.
+- Spark streaming is not really real time. It is micro-batch processing. Even though it is a one-second chunk of data.
+- The data is sent to a RDD (Resilient Distributed Dataset), and it can be processed distributed in parallel in your cluster.
+- The abstraction on top of all those these chunks is called DStream (Discretized Stream)
+  - Generates RDD's for each time step
+  - Can be transformed and acted on in much the same way as RDD's.
+  - Or you can access their underlying RDD's if you need them.
+- Commom stateless transformations on DStreams
+  - Map
+  - Flatmap
+  - Filter
+  - reduceByKey
+- Statefull data
+  - You can also maintain long-lived state on a DStream
+  - For example - running totals, broken down by keys
+  - Another example - aggregating session data on a web activity
+- Windowing
+  - Allow you to compute results across a longer time period than your batch interval
+  - Example: Top sellers from the past hour
+    - You might process data every one second
+    - But maintain a window of one hour
+  - The windows "Slides" as time goes on to represent batch within the window interval
+  - When we talk about windowing, there are three time intervals we need to think about:
+    - The batch interval is how often data is captured into a DStream
+    - 
