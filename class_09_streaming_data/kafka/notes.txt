@@ -11,4 +11,14 @@ STREAMING
   - Processing when it is there
 
 KAFKA
-- Is a publish/subscribe messaging system.
+- Is a general purpose publish/subscribe messaging system.
+- Kafka servers store all incoming messages from publishers for some period of time, and publishes them to a stream of data called Topic.
+- Kafka consumers subscribe to one or more topics, and receive data as it is published
+- A stream / topic can have many different consumers, all with their own position in the stream maintened
+- It is not just for Hadoop
+- Kafka may be distributed among many processes on many servers
+  - Will distribute the storage of stream data as well
+- Consumers may also be distributed
+  - Consumers of the same group will have messages distributed amongst them
+  - Consumers of different groups will get their own copy of each messages
+  

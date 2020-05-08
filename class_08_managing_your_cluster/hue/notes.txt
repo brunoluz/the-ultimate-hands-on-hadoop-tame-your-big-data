@@ -10,3 +10,18 @@ Tale of two different Hadoop distributions:
 - Cloudera
   - Hue is used query / files UI and notebook
   - Cloudera Manager used for management
+
+Hue is sort of Cloudera's ambari
+
+Top Hadoop distributions
+1. Cloudera
+2. Hortonworks
+3. MapR
+
+Main differences is that Hortonworks is a 100% open source solution, whereas Cloudera inject some of it's own proprietary tweaks to the system.
+Hue:
+- It has a built in Oozie editor
+- It is not an Apache project
+- It can be installed on a Hortonworks sandbox if you try hard enough.
+
+https://gethue.com

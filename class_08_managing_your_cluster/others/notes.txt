@@ -1,0 +1,14 @@
+Ganglia
+- Distributed Monitoring System
+- Replaced by Ambari, Cloudera Manager, Grafana
+- Last update was on 2008
+
+Chukwa
+- System for collecting and analyzing logs from your Hadoop cluster
+- Initialy adopted by NetFlix
+- Largely supplanted by Flume and Kafka
+  - Both are more general purpose
+  - Faster
+  - Easier to set up
+  - More reliable
+- Last update was on 2010
