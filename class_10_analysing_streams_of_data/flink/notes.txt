@@ -1,0 +1,29 @@
+FLINK
+- Another streaming framework
+- Flink is a German work for ninble.
+- Similar to Storm
+- Can run standalone, also on top of YARN or Mesos.
+- Higly Scalable (1000's of nodes)
+- Fault-Tolerant
+  - Can survive failures while still guaranteeing exacly-once processing
+  - Uses "States snapshots" to achieve this
+
+Flink vs Spark vs Storm
+- Flink is faster than Storm
+- Flink offers "real streaming" like Storm (But if you are using Trident with Storm, you are using micro-batches)
+- Flink offers a Higher-level API like Trident and Spark, but while doing real time streaming
+- Flink has good Scala support, like Spark Streaming
+- Flink has a ecosystem of its own, like Spark
+- Flink can process data based on events times, now when data is received
+  - Impressive windowing system
+  - This plus real-time streaming and exacly-once semantics is important for financial applications
+- But is the youngest of those technologies
+
+Connectors
+- HDFS
+- Cassandra
+- Kafka
+- ElasticSearch
+- NiFi
+- Redis
+- RabbitMQ

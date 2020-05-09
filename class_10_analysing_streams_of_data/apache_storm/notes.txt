@@ -18,3 +18,9 @@ Apache Storm
     - Higher-level API for Storm
     - "Exactly once" semantics
 - Storm runs your applications forever, once submitted. Until you explicity stop them.
+
+Storm x Spark Streaming
+- Spark have a whole framework at your disposal.
+- Storm is truly real-time processing
+- Storm uses Tumbling windows instead of Sliding windows
+- Kafka + Storm are a popular choice.
