@@ -1,0 +1,20 @@
+Apache Storm
+- Another framework for processing continuous streams of data on your cluster
+- Can run on top of YARN
+- Works on individual events, not micro-batchs (Like Spark Streaming)
+- If you need sub-second latency, Apache Storm is for you
+- Storm Terminology
+  - A stream consist of Tuples that flow through...
+  - Spouts that are sources of stream data (Kafka, Twitter, etc)
+  - Bolts that process stream data as it is received
+    - Transform, aggregate, write to databases/HDFS
+  - A topology is a graph of spouts and bolts that process your stream
+- Storm applications are usually written in java
+  - although bolts may be directed through scripts in others languages.
+  - Storm Core
+    - Low-level API for Storm
+    - "At-least-once" semantics
+  - Trident
+    - Higher-level API for Storm
+    - "Exactly once" semantics
+- Storm runs your applications forever, once submitted. Until you explicity stop them.
