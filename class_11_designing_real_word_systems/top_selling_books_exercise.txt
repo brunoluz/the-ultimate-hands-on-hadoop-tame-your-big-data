@@ -1,0 +1,8 @@
+What are your requirements? 
+- There are millions of end-users, generating thousands of queries per second.
+  - It MUST be fast - page latency is important.
+  - So, we need some distributed NoSQL solution.
+  - Access pattern is simple: "Give me current top N sellers in category X"
+- Hourly updates probably good enought (consistency not hugely important)
+- Must be Higly Available (customers does not like broken sites)
+- So - We want partition-tolerance and availability more than consistency.
