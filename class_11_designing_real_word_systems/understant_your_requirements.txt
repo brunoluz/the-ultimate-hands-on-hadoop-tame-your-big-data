@@ -1,0 +1,21 @@
+WORKING BACKWARDS
+- Start with the end user's needs, not from where your data is coming from.
+  - Sometimes you need to meet in the middle.
+- What sorts of access patterns do you antecipate from your end users
+  - Analytical queries that span large data ranges?
+  - Huge amounts of small transactions for very specific rows of data?
+  - Both?
+- What availability do these users demand?
+- What consistency do these users demand?
+
+THINKING ABOUT REQUIREMENTS
+- Just how big is your big data?
+  - Do you really need a cluster?
+- How much internal infrastructure and expertise is available?
+  - Should you use AWS or something similar?
+  - Do systems you already know fit the bill?
+- What about data retentions?
+  - Do you need to keep data around foreverfor auditing?
+  - Or do you need to purge it often, for privacy?
+- What about security?
+  - Check with legal

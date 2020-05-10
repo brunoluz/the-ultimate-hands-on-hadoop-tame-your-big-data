@@ -1,0 +1,74 @@
+IMPALA
+- Cloudera's alternative to Hive
+- Massively parallel SQL engine on Hadoop
+- Impara is aways running, so you avoid the start-up costs when having a hive query
+  - Made for BI-style queries
+- Impala is often faster than Hive, but Hive offers more versatility
+- Consider using Impala instead of Hive if you are using Cloudera
+
+ACCUMULO
+- Another Big Table clone (like HBase)
+- Offers better security model
+  - Cell based access control
+- Offers server-side programming
+- Consider it for your NoSQL needs if you have complex security requiriments
+  - But make sure the systems that need to read this data can talk to it.
+
+REDIS
+- A distributed in-memory data store (like memcache)
+- But it is more than a cache
+- Good support for storing data structures
+- Can persist data to disk
+- Can be used for data store and not just cache
+- Popular caching layer for web apps
+
+INGITE
+- An "in memory data fabric"
+- Think of it as an alternative to REDIS
+- But it is closer to a database
+  - ACID Guarantees
+  - SQL support
+  - But it is all done in memory
+
+ELASTICSEARCH
+- A distributed document search and analytics engine
+- Really popular
+  - Wikipedia, The Guardian, StackOverflow and many more use ElasticSearch
+- Can handle things like real-time searchs as you type
+- When paired with Kibana, great for interactive exploration
+- Amazon offers an ElasticSearch service
+
+KINESIS (And the Amazon ecosystem)
+- Amazon Kinesis is basically the AWS version of Kafka
+- Amazon has a whole ecosystem of its own
+  - Elastic MapReduce (EMR)
+  - S3
+  - ElasticSearch Service/CloudSearch
+  - DynamoDB
+  - Amazon RDS
+  - ElastiCache
+  - AI / Machine Learning services
+- EMR in particular is an easy way to spin up a Hadoop Cluster on demand.
+
+NIFI
+- Apache NIFI
+- Directed Graphs of Data Routing
+  - Can connect to Kafka, HDFS, Hive
+- Web UI for designing complex systems
+- Often seen in the context of IoT sensors and managing their data
+- Relevant in that it can be a streaming datasource you will see
+
+FALCON
+- A "Data governance engine" that sits on top of Oozie
+- Included in Hortonworks
+- Like NiFi, it allows construction of data processing graphs
+- But it is really meant to organize the flow of your data within Hadoop
+
+SLIDER
+- Apache Slider
+- Deployment tool for apps on a YARN cluster
+- Allows monitoring of your apps
+- Allow growing or shrinking your deployment as it is running
+- Manages mixed configurations
+- Start/stop applications on your cluster
+- Incubating

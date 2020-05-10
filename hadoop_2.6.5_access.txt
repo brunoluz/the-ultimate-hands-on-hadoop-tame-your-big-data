@@ -19,3 +19,6 @@ ambari-admin-password-reset
 ambari admin
  - user: admin
  - pass: xpto
+
+# when datanode refuses to go away from safemode:
+ sudo -u hdfs hadoop dfsadmin -safemode leave
